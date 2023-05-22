@@ -1,13 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
-function Square() {
-  const [count, setCount] = useState(0)
+function Square({ value }) {
+  const [count, setCount] = useState(0);
 
-  return <button className='square'>X</button>
-  
+  return <button className="square">{value}</button>;
 }
 
-export default Square
+function Board() {
+  return (
+    <>
+      <div className="board-row">
+        <Square value={1} />
+        <Square value="2" />
+        <Square value="3" />
+      </div>
+      <div className="board-row">
+        <Square value={4} />
+        <Square value={5} />
+        <Square value={6} />
+      </div>
+      <div className="board-row">
+        <Square value={7} />
+        <Square value={8} />
+        <Square value={9} />
+      </div>
+    </>
+  );
+}
+
+export default Board;
